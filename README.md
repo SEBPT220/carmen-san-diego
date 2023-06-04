@@ -83,5 +83,5 @@ Submit your pull request utilizing the **[PR Guidelines](https://github.com/SEI-
 - [SQL Zoo](http://sqlzoo.net/) - _(SQL tutorial and practice problems)_
 - [Hacker Rank](https://www.hackerrank.com/domains/sql/select) - _(You will need an account, its free! Also a good place to practice algorithms)_
 - [Baptize Yourself in Peak 90s](https://youtu.be/roiJizt8jxw)
-- [Musical Perfection](https://youtu.be/s1EIUP8tvbE)
+- [Musical Perfection](https://www.youtube.com/watch?v=E9aDMuBjR7Q)
 - [Defunctland - Carmen Sandiego](https://www.youtube.com/watch?v=OVVkSlXl41Q)
