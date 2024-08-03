@@ -19,7 +19,7 @@ SELECT * FROM countrylanguage WHERE language = 'Italian' AND percentage = (SELEC
 -- There are only two cities she could be flying to in the country. One is named the same as the country – that
 -- would be too obvious. We're following our gut on this one; find out what other city in that country she might
 --  be flying to.
-
+SELECT * FROM city WHERE countrycode = 'SMR' and name <> 'San Marino' ;
 
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different
