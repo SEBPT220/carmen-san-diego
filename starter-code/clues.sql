@@ -31,7 +31,7 @@ SELECT country.*, city.* FROM city JOIN country ON city.countrycode = country.co
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
 -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
 -- follow right behind you!
-
+SELECT city.name AS capital_city FROM country JOIN city ON city.id = country.capital WHERE country.code = 'BRA';
 
 
 -- Clue #7:  She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to
