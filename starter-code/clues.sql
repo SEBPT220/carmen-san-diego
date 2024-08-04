@@ -2,6 +2,11 @@
 -- traveling through Southern Europe. She's most likely traveling someplace where she won't be noticed,
 -- so find the least populated country in Southern Europe, and we'll start looking for her there.
 
+-- Find value of min population. Solution: Found that the least populated country in Southern Europe has a population of 1000
+SELECT MIN(population) FROM country WHERE region = 'Southern Europe' ; 
+
+-- Found that the country with 1000 population is Holy See: Vatican City 
+SELECT * FROM country WHERE continent = 'Europe' AND region = 'Southern Europe' AND population = 1000;
 
 
 
