@@ -5,15 +5,16 @@
 -- Find value of min population. Solution: Found that the least populated country in Southern Europe has a population of 1000
 SELECT MIN(population) FROM country WHERE region = 'Southern Europe' ; 
 
--- Found that the country with 1000 population is Holy See: Vatican City 
+-- Found that the country with 1000 population is Holy See: Vatican City with code: VAT 
 SELECT * FROM country WHERE continent = 'Europe' AND region = 'Southern Europe' AND population = 1000;
-
 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
 -- this country's officially recognized language. Check our databases and find out what language is
 -- spoken in this country, so we can call in a translator to work with you.
+SELECT * FROM countrylanguage WHERE countrycode = 'VAT' AND isofficial = 't' ;
 
+-- Found that the official language in Vatican city is : Italian
 
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
