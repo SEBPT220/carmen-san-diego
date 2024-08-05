@@ -7,14 +7,13 @@ SELECT MIN(population) FROM country WHERE region = 'Southern Europe' ;
 
 -- Found that the country with 1000 population is Vatican City with code: VAT 
 SELECT * FROM country WHERE continent = 'Europe' AND region = 'Southern Europe' AND population = 1000;
-
+-- SOLUTION TO CLUE 1: Vatican City and code is VAT
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in
 -- this country's officially recognized language. Check our databases and find out what language is
 -- spoken in this country, so we can call in a translator to work with you.
 SELECT * FROM countrylanguage WHERE countrycode = 'VAT' AND isofficial = 't' ;
-
--- Found that the official language in Vatican city is : Italian
+-- SOLUTION TO CLUE 2: Italian
 
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on
@@ -24,12 +23,8 @@ SELECT MAX(percentage) FROM countrylanguage WHERE language = 'Italian' ;
 -- Found that the max percentage is 100
 SELECT * FROM countrylanguage WHERE language = 'Italian' AND isofficial = 't' AND percentage = 100;
 -- Country code with max language Italian and max percentage 100 is SMR
-
 SELECT * FROM country WHERE code = 'SMR'; 
--- The solution to CLUE 3: SAN Marino
-
-
-
+-- SOLUTION TO CLUE 3: San Marino
 
 
 
@@ -37,6 +32,9 @@ SELECT * FROM country WHERE code = 'SMR';
 -- There are only two cities she could be flying to in the country. One is named the same as the country – that
 -- would be too obvious. We're following our gut on this one; find out what other city in that country she might
 --  be flying to.
+SELECT * FROM city WHERE countrycode = 'SMR'; 
+
+-- SOLUTION TO CLUE 4: Serravalle
 
 
 
@@ -44,12 +42,12 @@ SELECT * FROM country WHERE code = 'SMR';
 -- parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were
 -- headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
+SELECT country.*, city.* FROM city JOIN country ON city.countrycode = country.code WHERE country.continent ='South America' AND city.name LIKE 'Serra%';
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
 -- the capital! Look up the country's capital, and get there pronto! Send us the name of where you're headed and we'll
 -- follow right behind you!
-
 
 
 -- Clue #7:  She knows we're on to her – her taxi dropped her off at the international airport, and she beat us to
